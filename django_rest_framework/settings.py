@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-76rrs085yxg7k=^3nt%)@-m1n0iz*gwy8mv#1f7i_m)0qx!mlw
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['api-ecommerce-01.azurewebsites.net']
+ALLOWED_HOSTS = ['api-ecommerce-01.azurewebsites.net', '127.0.0.1']
 
 
 # Application definition
@@ -40,9 +40,11 @@ INSTALLED_APPS = [
     'rest_framework',
     'api',
     'coreapi',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
