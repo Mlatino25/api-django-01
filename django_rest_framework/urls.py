@@ -21,5 +21,5 @@ from rest_framework.documentation import include_docs_urls
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('api.urls')),
-    path('documentacion_api_ecommerce', include_docs_urls(title='Documentacion Api Ecommerce'))
+    path('documentacion_api_ecommerce/v2', include_docs_urls(title='Documentacion Api Ecommerce'))
 ]
