@@ -162,8 +162,8 @@ class ShoppingCartItem(models.Model):
 
 
 class SiteUser(models.Model):
-    email_address = models.CharField(max_length=350, blank=True, null=True)
-    phone_number = models.CharField(max_length=20, blank=True, null=True)
+    username = models.CharField(max_length=350, blank=True, null=True)
+    email = models.CharField(max_length=20, blank=True, null=True)
     password = models.CharField(max_length=500, blank=True, null=True)
 
     class Meta:
