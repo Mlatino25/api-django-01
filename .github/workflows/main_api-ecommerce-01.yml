@@ -73,6 +73,6 @@ jobs:
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
         with:
-          app-name: 'api-ecommerce-01'
+          app-name: 'api-ecommerce-prod01'
           slot-name: 'Production'
           
