@@ -1,112 +1,47 @@
 from rest_framework import serializers
-from .models import *
+from .models import Usuario, CategoriaProducto, Producto, CarritoCompras, Facturas, FacturaProductosUsuarios, Imagen, Inventario, SubcategoriaProducto
 
-class AddressSerializer(serializers.ModelSerializer):
+class UsuarioSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Address
+        model = Usuario
         fields = '__all__'
 
-class CountrySerializer(serializers.ModelSerializer):
+class CategoriaProductoSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Country
+        model = CategoriaProducto
         fields = '__all__'
 
-class OrderLineSerializer(serializers.ModelSerializer):
+class ProductoSerializer(serializers.ModelSerializer):
     class Meta:
-        model = OrderLine
+        model = Producto
         fields = '__all__'
 
-class OrderStatusSerializer(serializers.ModelSerializer):
+class CarritoComprasSerializer(serializers.ModelSerializer):
     class Meta:
-        model = OrderStatus
+        model = CarritoCompras
         fields = '__all__'
 
-class PaymentTypeSerializer(serializers.ModelSerializer):
+class FacturasSerializer(serializers.ModelSerializer):
     class Meta:
-        model = PaymentType
+        model = Facturas
         fields = '__all__'
 
-class ProductSerializer(serializers.ModelSerializer):
+class FacturaProductosUsuariosSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Product
+        model = FacturaProductosUsuarios
         fields = '__all__'
 
-class ProductCategorySerializer(serializers.ModelSerializer):
+class ImagenSerializer(serializers.ModelSerializer):
     class Meta:
-        model = ProductCategory
+        model = Imagen
         fields = '__all__'
 
-class ProductConfigurationSerializer(serializers.ModelSerializer):
+class InventarioSerializer(serializers.ModelSerializer):
     class Meta:
-        model = ProductConfiguration
+        model = Inventario
         fields = '__all__'
 
-class ProductItemSerializer(serializers.ModelSerializer):
+class SubcategoriaProductoSerializer(serializers.ModelSerializer):
     class Meta:
-        model = ProductItem
+        model = SubcategoriaProducto
         fields = '__all__'
-
-class PromotionSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Promotion
-        fields = '__all__'
-
-class PromotionCategorySerializer(serializers.ModelSerializer):
-    class Meta:
-        model = PromotionCategory
-        fields = '__all__'
-
-class ShippingMethodSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = ShippingMethod
-        fields = '__all__'
-
-class ShopOrderSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = ShopOrder
-        fields = '__all__'
-
-class ShoppingCartSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = ShoppingCart
-        fields = '__all__'
-
-class ShoppingCartItemSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = ShoppingCartItem
-        fields = '__all__'
-
-class SiteUserSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = SiteUser
-        fields = '__all__'
-
-class UserAddressSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = UserAddress
-        fields = '__all__'
-
-class UserPaymentMethodSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = UserPaymentMethod
-        fields = '__all__'
-
-class UserReviewSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = UserReview
-        fields = '__all__'
-
-class VariationSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Variation
-        fields = '__all__'
-
-class VariationOptionSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = VariationOption
-        fields = '__all__'
-
-
-
-# fin serializers db ecommerce.
-
