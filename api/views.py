@@ -1,100 +1,39 @@
-from django.shortcuts import render
-
-# Create your views here.
-
 from rest_framework import viewsets
-from .models import *
-from .serializers import *
+from .models import Usuario, CategoriaProducto, Producto, CarritoCompras, Facturas, FacturaProductosUsuarios, Imagen, Inventario, SubcategoriaProducto
+from .serializers import UsuarioSerializer, CategoriaProductoSerializer, ProductoSerializer, CarritoComprasSerializer, FacturasSerializer, FacturaProductosUsuariosSerializer, ImagenSerializer, InventarioSerializer, SubcategoriaProductoSerializer
 
-class AddressViewSet(viewsets.ModelViewSet):
-    queryset = Address.objects.all()
-    serializer_class = AddressSerializer
+class UsuarioViewSet(viewsets.ModelViewSet):
+    queryset = Usuario.objects.all()
+    serializer_class = UsuarioSerializer
 
-class CountryViewSet(viewsets.ModelViewSet):
-    queryset = Country.objects.all()
-    serializer_class = CountrySerializer
+class CategoriaProductoViewSet(viewsets.ModelViewSet):
+    queryset = CategoriaProducto.objects.all()
+    serializer_class = CategoriaProductoSerializer
 
-class OrderLineViewSet(viewsets.ModelViewSet):
-    queryset = OrderLine.objects.all()
-    serializer_class = OrderLineSerializer
+class ProductoViewSet(viewsets.ModelViewSet):
+    queryset = Producto.objects.all()
+    serializer_class = ProductoSerializer
 
-class OrderStatusViewSet(viewsets.ModelViewSet):
-    queryset = OrderStatus.objects.all()
-    serializer_class = OrderStatusSerializer
+class CarritoComprasViewSet(viewsets.ModelViewSet):
+    queryset = CarritoCompras.objects.all()
+    serializer_class = CarritoComprasSerializer
 
-class PaymentTypeViewSet(viewsets.ModelViewSet):
-    queryset = PaymentType.objects.all()
-    serializer_class = PaymentTypeSerializer
+class FacturasViewSet(viewsets.ModelViewSet):
+    queryset = Facturas.objects.all()
+    serializer_class = FacturasSerializer
 
-class ProductViewSet(viewsets.ModelViewSet):
-    queryset = Product.objects.all()
-    serializer_class = ProductSerializer
+class FacturaProductosUsuariosViewSet(viewsets.ModelViewSet):
+    queryset = FacturaProductosUsuarios.objects.all()
+    serializer_class = FacturaProductosUsuariosSerializer
 
-class ProductCategoryViewSet(viewsets.ModelViewSet):
-    queryset = ProductCategory.objects.all()
-    serializer_class = ProductCategorySerializer
+class ImagenViewSet(viewsets.ModelViewSet):
+    queryset = Imagen.objects.all()
+    serializer_class = ImagenSerializer
 
-class ProductConfigurationViewSet(viewsets.ModelViewSet):
-    queryset = ProductConfiguration.objects.all()
-    serializer_class = ProductConfigurationSerializer
+class InventarioViewSet(viewsets.ModelViewSet):
+    queryset = Inventario.objects.all()
+    serializer_class = InventarioSerializer
 
-class ProductItemViewSet(viewsets.ModelViewSet):
-    queryset = ProductItem.objects.all()
-    serializer_class = ProductItemSerializer
-
-class PromotionViewSet(viewsets.ModelViewSet):
-    queryset = Promotion.objects.all()
-    serializer_class = PromotionSerializer
-
-class PromotionCategoryViewSet(viewsets.ModelViewSet):
-    queryset = PromotionCategory.objects.all()
-    serializer_class = PromotionCategorySerializer
-
-class ShippingMethodViewSet(viewsets.ModelViewSet):
-    queryset = ShippingMethod.objects.all()
-    serializer_class = ShippingMethodSerializer
-
-class ShopOrderViewSet(viewsets.ModelViewSet):
-    queryset = ShopOrder.objects.all()
-    serializer_class = ShopOrderSerializer
-
-class ShoppingCartViewSet(viewsets.ModelViewSet):
-    queryset = ShoppingCart.objects.all()
-    serializer_class = ShoppingCartSerializer
-
-class ShoppingCartItemViewSet(viewsets.ModelViewSet):
-    queryset = ShoppingCartItem.objects.all()
-    serializer_class = ShoppingCartItemSerializer
-
-class SiteUserViewSet(viewsets.ModelViewSet):
-    queryset = SiteUser.objects.all()
-    serializer_class = SiteUserSerializer
-
-class UserAddressViewSet(viewsets.ModelViewSet):
-    queryset = UserAddress.objects.all()
-    serializer_class = UserAddressSerializer
-
-class UserPaymentMethodViewSet(viewsets.ModelViewSet):
-    queryset = UserPaymentMethod.objects.all()
-    serializer_class = UserPaymentMethodSerializer
-
-class UserReviewViewSet(viewsets.ModelViewSet):
-    queryset = UserReview.objects.all()
-    serializer_class = UserReviewSerializer
-
-class VariationViewSet(viewsets.ModelViewSet):
-    queryset = Variation.objects.all()
-    serializer_class = VariationSerializer
-
-class VariationOptionViewSet(viewsets.ModelViewSet):
-    queryset = VariationOption.objects.all()
-    serializer_class = VariationOptionSerializer
-
-
-
-# Fin Viewst db/models ecommerce.
-
-
-
-
-
+class SubcategoriaProductoViewSet(viewsets.ModelViewSet):
+    queryset = SubcategoriaProducto.objects.all()
+    serializer_class = SubcategoriaProductoSerializer
