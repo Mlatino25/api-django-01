@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'django_rest_framework.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ecommerce_api_01',
+        'NAME': 'ecommerce_api_prod01',
         'USER': 'machinewar',
         'PASSWORD': 'Ecommerce24!',
         'HOST': 'server-db-ecommerce.mysql.database.azure.com',
