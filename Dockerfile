@@ -26,4 +26,4 @@ COPY . /app
 WORKDIR /app
 
 # Comando para ejecutar la aplicación
-CMD ["python", "app.py"]
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
