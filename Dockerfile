@@ -1,26 +1,25 @@
-# Use the base image
+# Usa una imagen base que incluya las herramientas necesarias
 FROM python:3.10-slim
 
-# Install build dependencies
+# Instala dependencias del sistema
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-    pkg-config \
+    gcc \
     libmariadb-dev \
+    build-essential \
     && rm -rf /var/lib/apt/lists/*
 
-
-# Set the working directory
-WORKDIR /app
-
-# Copy requirements file
+# Copia el archivo de requisitos
 COPY requirements.txt .
 
-# Install Python dependencies
+# Instala las dependencias de Python
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the rest of the application code
-COPY . .
+# Copia el resto del código de la aplicación
+COPY . /app
 
-# Specify the command to run the application
+# Define el directorio de trabajo
+WORKDIR /app
+
+# Comando para ejecutar la aplicación
 CMD ["python", "app.py"]
-
