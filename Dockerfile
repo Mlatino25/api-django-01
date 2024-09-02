@@ -1,21 +1,25 @@
-# Usa una imagen base con Python preinstalado
+# Use the base image
 FROM python:3.10-slim
 
-# Establece el directorio de trabajo en la imagen
+# Install build dependencies
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    pkg-config \
+    libmysqlclient-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set the working directory
 WORKDIR /app
 
-# Copia el archivo de requisitos a la imagen
+# Copy requirements file
 COPY requirements.txt .
 
-# Instala las dependencias
+# Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copia el resto del código de la aplicación a la imagen
+# Copy the rest of the application code
 COPY . .
 
-# Exponer el puerto en el que la aplicación se ejecutará
-EXPOSE 8000
-
-# Comando para ejecutar la aplicación
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+# Specify the command to run the application
+CMD ["python", "app.py"]
 
