@@ -7,6 +7,7 @@ RUN apt-get update && \
     gcc \
     libmariadb-dev \
     build-essential \
+    pkg-config \
     && rm -rf /var/lib/apt/lists/*
 
 # Actualiza pip a la última versión
