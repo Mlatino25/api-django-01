@@ -9,6 +9,9 @@ RUN apt-get update && \
     build-essential \
     && rm -rf /var/lib/apt/lists/*
 
+# Actualiza pip a la última versión
+RUN pip install --upgrade pip
+
 # Copia el archivo de requisitos
 COPY requirements.txt .
 
